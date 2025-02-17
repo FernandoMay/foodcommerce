@@ -23,9 +23,7 @@ class IconTextWidget extends StatelessWidget {
           color: iconColor,
           size: iconsize,
         ),
-        const SizedBox(
-          width: 5,
-        ),
+        const SizedBox(width: 5),
         Text(
           text,
           style: TextStyle(fontSize: textsize, color: Appcolors.paraColor),
@@ -40,13 +38,13 @@ class BigText extends StatelessWidget {
   final double size;
   final String text;
   final TextOverflow overflow;
-  const BigText(
-      {Key? key,
-      this.color = const Color(0xFF332d2b),
-      required this.text,
-      this.size = 20,
-      this.overflow = TextOverflow.ellipsis})
-      : super(key: key);
+  const BigText({
+    Key? key,
+    this.color = const Color(0xFF332d2b),
+    required this.text,
+    this.size = 20,
+    this.overflow = TextOverflow.ellipsis,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +55,6 @@ class BigText extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontWeight: FontWeight.w400,
-        fontFamily: 'Roboto',
         fontSize: size,
       ),
     );
@@ -69,6 +66,7 @@ class SmallText extends StatelessWidget {
   final double size;
   final String text;
   final double height;
+  final int? maxLines;
 
   const SmallText({
     Key? key,
@@ -76,15 +74,17 @@ class SmallText extends StatelessWidget {
     required this.text,
     this.size = 12,
     this.height = 1.2,
+    this.maxLines,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: maxLines,
+      overflow: maxLines != null ? TextOverflow.ellipsis : null,
       style: TextStyle(
         color: color,
-        fontFamily: 'Roboto',
         fontSize: size,
         height: height,
       ),

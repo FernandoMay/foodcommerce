@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodcommerce/home.dart';
+import 'package:foodcommerce/widgets/bottom_nav_bar.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,16 +9,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Foodcommerce',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const MainBottomNavBar(),
     );
   }
 }
