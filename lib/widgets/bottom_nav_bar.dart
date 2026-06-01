@@ -3,7 +3,7 @@ import 'package:foodcommerce/constants.dart';
 import 'package:foodcommerce/home.dart';
 import 'package:foodcommerce/screens/cart_page.dart';
 import 'package:foodcommerce/screens/profile_page.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class MainBottomNavBar extends StatelessWidget {
   const MainBottomNavBar({Key? key}) : super(key: key);
@@ -55,12 +55,12 @@ class MainBottomNavBar extends StatelessWidget {
       controller: controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
-      confineInSafeArea: true,
+      confineToSafeArea: true,
       backgroundColor: Colors.white,
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true,
-      hideNavigationBarWhenKeyboardShows: true,
+      hideNavigationBarWhenKeyboardAppears: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
@@ -73,16 +73,17 @@ class MainBottomNavBar extends StatelessWidget {
           ),
         ],
       ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: const ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
+      popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
+      animationSettings: const NavBarAnimationSettings(
+        navBarItemAnimation: ItemAnimationSettings(
+          duration: Duration(milliseconds: 200),
+          curve: Curves.ease,
+        ),
+        screenTransitionAnimation: ScreenTransitionAnimationSettings(
+          animateTabTransition: true,
+          curve: Curves.ease,
+          duration: Duration(milliseconds: 200),
+        ),
       ),
       navBarStyle: NavBarStyle.style6,
     );
