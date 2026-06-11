@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Foodcommerce',
+      title: 'FoodCommerce',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFE53935)),
         useMaterial3: true,
       ),
       home: const MainBottomNavBar(),

@@ -1,16 +1,37 @@
-# foodcommerce
+# FoodCommerce
 
-A new Flutter project.
+A food delivery app built with Flutter and GetX.
+
+## Features
+
+- Browse food items by category
+- Search for food items
+- View food details
+- Cart management
+- User profile
+
+## Tech Stack
+
+- **Framework**: Flutter (SDK >=3.0.6 <4.0.0)
+- **State Management**: GetX
+- **Local Storage**: SharedPreferences
+- **Navigation**: Persistent Bottom Nav Bar
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Testing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter test
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build
+
+```bash
+flutter build apk --debug
+```

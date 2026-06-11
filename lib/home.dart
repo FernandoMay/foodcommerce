@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodcommerce/constants.dart';
 import 'package:foodcommerce/models/food_item.dart';
 import 'package:foodcommerce/screens/food_detail.dart';
-import 'package:foodcommerce/utils/data.dart';
+import 'package:foodcommerce/utils/data.dart' show AppData;
 import 'package:foodcommerce/widgets.dart';
 import 'package:foodcommerce/widgets/category_item.dart';
 import 'package:get/get.dart';
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.grey.withValues(alpha: 0.2),
                     spreadRadius: 1,
                     blurRadius: 8,
                   ),
@@ -177,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
+                                  color: Colors.grey.withValues(alpha: 0.2),
                                   spreadRadius: 1,
                                   blurRadius: 8,
                                 ),

@@ -71,7 +71,7 @@ class FoodDetailScreen extends StatelessWidget {
               background: Container(
                 width: double.maxFinite,
                 decoration: BoxDecoration(
-                  color: Appcolors.mainColor.withOpacity(0.8),
+                  color: Appcolors.mainColor.withValues(alpha: 0.8),
                 ),
                 child: Center(
                   child: Icon(
